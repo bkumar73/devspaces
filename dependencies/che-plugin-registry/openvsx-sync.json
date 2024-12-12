@@ -234,5 +234,29 @@
   {
     "id": "mongodb.mongodb-vscode",
     "version": "1.9.1"
+  },
+  {
+    "id": "Zowe.vscode-extension-for-zowe",
+    "version": "3.0.3"
+  },
+  {
+    "id": "Zowe.zowe-explorer-ftp-extension",
+    "version": "3.0.3"
+  },
+  {
+    "id": "Zowe.cics-extension-for-zowe",
+    "version": "2.3.7"
+  },
+  {
+    "id": "IBM.zopeneditor",
+    "version": "5.1.0"
+  },
+  {
+    "id": "IBM.zopendebug",
+    "version": "5.1.0"
+  },
+  {
+    "id": "Zowe.secrets-for-kubernetes",
+    "version": "0.2.0"
   }
 ]
