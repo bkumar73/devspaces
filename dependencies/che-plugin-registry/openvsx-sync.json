@@ -9,7 +9,7 @@
   },
   {
     "id": "DavidAnson.vscode-markdownlint",
-    "version": "0.56.0"
+    "version": "0.57.0"
   },
   {
     "id": "robocorp.robotframework-lsp",
@@ -29,7 +29,7 @@
   },
   {
     "id": "redhat.vscode-xml",
-    "version": "0.27.1"
+    "version": "0.27.2"
   },
   {
     "id": "redhat.vscode-yaml",
@@ -49,7 +49,7 @@
   },
   {
     "id": "llvm-vs-code-extensions.vscode-clangd",
-    "version": "0.1.29"
+    "version": "0.1.33"
   },
   {
     "id": "eclipse-cdt.cdt-gdb-vscode",
@@ -109,15 +109,15 @@
   },
   {
     "id": "redhat.java",
-    "version": "1.36.0"
+    "version": "1.37.0"
   },
   {
     "id": "vscjava.vscode-java-debug",
-    "version": "0.58.0"
+    "version": "0.58.1"
   },
   {
     "id": "vscjava.vscode-java-test",
-    "version": "0.42.0"
+    "version": "0.43.0"
   },
   {
     "id": "redhat.vscode-microprofile",
@@ -141,7 +141,7 @@
   },
   {
     "id": "redhat.vscode-openshift-connector",
-    "version": "1.16.0"
+    "version": "1.17.0"
   },
   {
     "id": "xdebug.php-debug",
@@ -149,11 +149,11 @@
   },
   {
     "id": "ms-dotnettools.vscode-dotnet-runtime",
-    "version": "2.2.2"
+    "version": "2.2.4"
   },
   {
     "id": "muhammad-sammy.csharp",
-    "version": "2.50.25"
+    "version": "2.55.28"
   },
   {
     "id": "SonarSource.sonarlint-vscode",
@@ -181,11 +181,11 @@
   },
   {
     "id": "atlassian.atlascode",
-    "version": "3.0.10"
+    "version": "3.0.14"
   },
   {
     "id": "JFrog.jfrog-vscode-extension",
-    "version": "2.11.7"
+    "version": "2.13.2"
   },
   {
     "id": "SonatypeCommunity.vscode-iq-plugin",
@@ -193,7 +193,7 @@
   },
   {
     "id": "GitLab.gitlab-workflow",
-    "version": "5.17.0"
+    "version": "5.19.0"
   },
   {
     "id": "timonwong.shellcheck",
@@ -213,11 +213,11 @@
   },
   {
     "id": "eamodio.gitlens",
-    "version": "15.6.2"
+    "version": "16.0.4"
   },
   {
     "id": "Continue.continue",
-    "version": "0.8.52"
+    "version": "0.8.60"
   },
   {
     "id": "typefox.open-collaboration-tools",
