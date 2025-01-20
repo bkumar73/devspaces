@@ -1,5 +1,12 @@
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+
 server:
   port: 9000
+  jetty:
+    threads:
+      max-queue-capacity: 100
 
 spring:
   profiles:
@@ -43,12 +50,42 @@ management:
   health:
     probes:
       enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - metrics
+          - prometheus
+org:
+  jobrunr:
+    job-scheduler:
+      enabled: true
+    background-job-server:
+      enabled: true
+      worker-count: 2
+    dashboard:
+      enabled: false
+    database:
+      type: sql
+    miscellaneous:
+      allow-anonymous-data-usage: false
+
+bucket4j:
+  enabled: false
 
 ovsx:
   elasticsearch:
     enabled: false
     clear-on-start: true
+  extension-control:
+    update-on-start: true
+  integrity:
+    key-pair: create # create, renew, delete, 'undefined'
   databasesearch:
     enabled: true
   registry:
-    version: 'v0.15.8'
+    version: 'v0.19.0'
+  storage:
+    local:
+      directory: /tmp/extensions
