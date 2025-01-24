@@ -25,7 +25,7 @@ COPYRIGHT="#
 #    Red Hat, Inc. - initial API and implementation
 "
 doupdateversion=1 #by default update the VERSION files
-BRANCH="devspaces-3-rhel-8"
+BRANCH="devspaces-3-rhel-9"
 PR_BRANCH="pr-update-version-and-registry-tags-$(date +%s)"
 OPENBROWSERFLAG="" # if a PR is generated, open it in a browser
 docommit=1 # by default DO commit the change
@@ -105,7 +105,7 @@ computeLatestCSV() {
   # extract the CSV version from the container as with CVE respins, the CSV version != the nominal container tag or JIRA version 2.13.1
   #if [[ ! -x ${SCRIPTPATH}/containerExtract.sh ]]; then
   if [[ ! -x ${WORKDIR}/product/containerExtract.sh ]]; then
-      curl -sSLO https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-8/product/containerExtract.sh
+      curl -sSLO https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-9/product/containerExtract.sh
       chmod +x containerExtract.sh
   fi
   rm -fr /tmp/${SOURCE_CONTAINER//\//-}-${containerTag}-*/
@@ -122,7 +122,7 @@ computeLatestCSV() {
   # CRW-4324, CRW-4354 DO NOT keep freshmaker suffix for previous CSV versions!!! 
   # Using FM versions WILL break CVP tests when the image doesn't exist for all OCP versions or hasn't been released yet to RHEC (which happens intermittently)
   # We ship using open-ended OCP version range: see com.redhat.openshift.versions 
-  # in https://github.com/redhat-developer/devspaces-images/blob/devspaces-3-rhel-8/devspaces-operator-bundle/Dockerfile#L31)
+  # in https://github.com/redhat-developer/devspaces-images/blob/devspaces-3-rhel-9/devspaces-operator-bundle/Dockerfile#L31)
   # We must assume that the Freshmaker lifecycle will do its own thing with olm.substitutesFor (grafting their fixes onto our single-stream graph) rather than injecting itself into our graph directly and pruning out older releases
   # See also https://issues.redhat.com/browse/CWFHEALTH-2003 https://issues.redhat.com/browse/CLOUDWF-9099 https://issues.redhat.com/browse/CLOUDDST-18632
   echo "Found CSV_VERSION_PREV = ${CSV_VERSION_PREV}"
@@ -234,7 +234,7 @@ updateJobConfig() {
     if [[ $VERBOSE ]]; then echo "[DEBUG] Updating upstream branches."; fi
     replaceField "${JOB_CONFIG}" "(.\"${JOB_KEY}\"[][\"${DEVSPACES_VERSION}\"][\"upstream_branch\"]|select(.[]?|contains(\".x\")))" "[\"7.${CHE_Y}.x\",\"main\"]"
     replaceField "${JOB_CONFIG}" "(.\"${JOB_KEY}\"[][\"${DEVSPACES_VERSION}\"][\"upstream_branch\"]|select(.[]?==\"main\"))" "[\"7.${CHE_Y}.x\",\"main\"]"
-    replaceField "${JOB_CONFIG}" "(.\"${JOB_KEY}\"[][\"${DEVSPACES_VERSION}\"][\"upstream_branch\"]|select(.[]?==\"devspaces-3-rhel-8\"))" "[\"devspaces-${DEVSPACES_VERSION}-rhel-8\",\"devspaces-${DEVSPACES_VERSION}-rhel-8\"]"
+    replaceField "${JOB_CONFIG}" "(.\"${JOB_KEY}\"[][\"${DEVSPACES_VERSION}\"][\"upstream_branch\"]|select(.[]?==\"devspaces-3-rhel-9\"))" "[\"devspaces-${DEVSPACES_VERSION}-rhel-9\",\"devspaces-${DEVSPACES_VERSION}-rhel-9\"]"
 
     if [[ $VERBOSE ]]; then echo "Make sure \"current\" jobs are enabled"; fi
     replaceField "${JOB_CONFIG}" "(.\"${JOB_KEY}\"[][\"${DEVSPACES_VERSION}\"][\"disabled\"]|select(.==true))" 'false'

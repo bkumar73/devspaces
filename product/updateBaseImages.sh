@@ -36,10 +36,10 @@ WORKDIR=$(pwd)
 # try to compute branches from currently checked out branch; else fall back to hard coded value
 # where to find redhat-developer/devspaces/${SCRIPTS_BRANCH}/product/getLatestImageTags.sh
 SCRIPTS_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
-if [[ $SCRIPTS_BRANCH != "devspaces-3."*"-rhel-8" ]]; then
-	SCRIPTS_BRANCH="devspaces-3-rhel-8"
+if [[ $SCRIPTS_BRANCH != "devspaces-3."*"-rhel-9" ]]; then
+	SCRIPTS_BRANCH="devspaces-3-rhel-9"
 fi
-# where to find source branch to update, devspaces-3.y-rhel-8, 7.yy.x, etc.
+# where to find source branch to update, devspaces-3.y-rhel-9, 7.yy.x, etc.
 SOURCES_BRANCH=${SCRIPTS_BRANCH}
 
 DOCKERFILE="Dockerfile"
@@ -76,7 +76,7 @@ $0 -b 7.yy.x -w \$(pwd) -f \*ockerfile -maxdepth 5 -o
 "
 	echo "Options: 
 	--sources-branch, -b  set sources branch (project to update), eg., 7.yy.x
-	--scripts-branch, -sb set scripts branch (project with helper scripts), eg., devspaces-3.y-rhel-8
+	--scripts-branch, -sb set scripts branch (project with helper scripts), eg., devspaces-3.y-rhel-9
 	--no-commit, -n	do not commit to BRANCH
 	--no-push, -p	do not push to BRANCH
 	--tag			regex match to restrict results, eg., '1\.13|8\.[0-9]-' to find golang 1.13 (not 1.14) and any ubi 8-x- tag
@@ -202,8 +202,8 @@ for d in $(find "${WORKDIR}/" -maxdepth "${MAXDEPTH}" -name "${DOCKERFILE}" | so
 		echo "# Checking ${d} ..."
 		# pull latest commits
 		if [[ -d ${d%%/${DOCKERFILE}} ]]; then pushd "${d%%/${DOCKERFILE}}" >/dev/null; pushedIn=1; fi
-		if [[ "${d%/${DOCKERFILE}}" == *"-rhel8" ]]; then
-			BRANCHUSED=${SOURCES_BRANCH/rhel-7/rhel-8}
+		if [[ "${d%/${DOCKERFILE}}" == *"-rhel9" ]]; then
+			BRANCHUSED=${SOURCES_BRANCH/rhel-7/rhel-8/rhel-9}
 		else
 			BRANCHUSED=${SOURCES_BRANCH}
 		fi

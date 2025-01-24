@@ -69,7 +69,7 @@ for image in $images; do
         if [[ ${QUAYDEST} =~ .*(devworkspace-|)(rhel8-|)operator:.+ ]];        then QUAYDEST="devworkspace/devworkspace-rhel8-operator:${TAG}"; fi
     elif [[ $URLfrag == *"devspaces"* ]]; then
         if [[ ${QUAYDEST} == *"/operator-bundle:"* ]]; then QUAYDEST="devspaces/devspaces-operator-bundle:${TAG}"; fi
-        if [[ ${QUAYDEST} == *"/operator:"* ]];        then QUAYDEST="devspaces/devspaces-rhel8-operator:${TAG}"; fi
+        if [[ ${QUAYDEST} == *"/operator:"* ]];        then QUAYDEST="devspaces/devspaces-rhel9-operator:${TAG}"; fi
     else
         # replace /rh-osbs/foo-image with foo/image
         QUAYDEST=$(echo $QUAYDEST | sed -r -e "s#rh-osbs/([^-])-#\1/#g")

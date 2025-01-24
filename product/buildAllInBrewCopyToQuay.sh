@@ -12,10 +12,10 @@
 # where to find redhat-developer/devspaces/${DWNSTM_BRANCH}/product/getLatestImageTags.sh
 DS_VERSION="3.y"
 DWNSTM_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
-if [[ $DWNSTM_BRANCH != "devspaces-3."*"-rhel-8" ]]; then
-  DWNSTM_BRANCH="devspaces-3-rhel-8"
+if [[ $DWNSTM_BRANCH != "devspaces-3."*"-rhel-9" ]]; then
+  DWNSTM_BRANCH="devspaces-3-rhel-9"
 else 
-  DS_VERSION=${DWNSTM_BRANCH/devspaces-/}; DS_VERSION=${DS_VERSION/-rhel-8/}
+  DS_VERSION=${DWNSTM_BRANCH/devspaces-/}; DS_VERSION=${DS_VERSION/-rhel-9/}
 fi
 
 SCRIPT=$(readlink -f "$0"); SCRIPTPATH=$(dirname "$SCRIPT")
@@ -32,7 +32,7 @@ Example: $0 -t ${DS_VERSION} --sources /path/to/pkgs.devel/projects/
 }
 
 latestNext="--latest"
-if [[ ${DWNSTM_BRANCH} == "devspaces-3-rhel-8" ]]; then latestNext="--next"; fi
+if [[ ${DWNSTM_BRANCH} == "devspaces-3-rhel-9" ]]; then latestNext="--next"; fi
 
 PHASES="1 2"
 while [[ "$#" -gt 0 ]]; do

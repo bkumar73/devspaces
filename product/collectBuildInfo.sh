@@ -33,7 +33,7 @@ Options:
   -h, --help       Show this help
 
 Example - collect metadata for the current builds in 
-https://github.com/redhat-developer/devspaces/blob/devspaces-3-rhel-8/dependencies/LATEST_IMAGES_COMMITS:
+https://github.com/redhat-developer/devspaces/blob/devspaces-3-rhel-9/dependencies/LATEST_IMAGES_COMMITS:
 
     for d in \$(cat /path/to/LATEST_IMAGES_COMMITS | grep Build | sed -r -e "s@.+buildID=@@"); do \\
       $0 -b \$d --append -f /tmp/collectBuildInfo.yml --csv /tmp/collectBuildInfo.csv ; \\
@@ -84,7 +84,7 @@ getContainerFromTaskID () {
 
 getContainerFromBuildID () {
 # brew buildinfo 2203173 | grep Extra | sed -r -e "s@Extra: @@" | yq -r '.image.index.pull[]' | grep -v sha256
-# registry-proxy.engineering.redhat.com/rh-osbs/devspaces-code-rhel8:3.3-6
+# registry-proxy.engineering.redhat.com/rh-osbs/devspaces-code-rhel9:3.3-6
     buildid=$1
     container=$(brew buildinfo $buildid | grep Extra | sed -r -e "s@Extra: @@" | yq -r '.image.index.pull[]' | grep -v sha256 \
         | sed -r -e "s@registry-proxy.engineering.redhat.com/rh-osbs/@@")

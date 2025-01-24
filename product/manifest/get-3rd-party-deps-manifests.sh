@@ -158,9 +158,9 @@ if [[ ${phases} == *"1"* ]]; then
 	devspaces-server \
 	; do
 		if [[ $d == "devspaces" ]]; then
-			containerName=${d##containers/}-server-rhel8-container
+			containerName=${d##containers/}-server-rhel9-container
 		else
-			containerName=${d##containers/}-rhel8-container
+			containerName=${d##containers/}-rhel9-container
 		fi
 		# echo $containerName
 		log ""

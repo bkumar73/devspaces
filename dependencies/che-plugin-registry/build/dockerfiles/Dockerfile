@@ -116,9 +116,11 @@ RUN \
     echo "======================"
 
 RUN chmod 777 /var/run/postgresql && \
+    mkdir -p /tmp/extensions && \
     initdb && \
     /usr/local/bin/import_vsix.sh && \
     chmod -R 777 /tmp/file && \
+    chmod -R 777 /tmp/extensions && \
     rm /var/lib/pgsql/15/data/database/postmaster.pid && \
     rm /var/run/postgresql/.s.PGSQL* && \
     rm /tmp/.s.PGSQL* && \
@@ -130,7 +132,7 @@ RUN \
     chgrp -R 0 /var/lib/pgsql /var/lib/pgsql/15 /var/lib/pgsql/data /var/lib/pgsql/backups && \
     mv /var/lib/pgsql/15/data/database /var/lib/pgsql/15/data/old
 
-ARG DS_BRANCH=devspaces-3-rhel-8
+ARG DS_BRANCH=devspaces-3-rhel-9
 ENV DS_BRANCH=${DS_BRANCH}
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

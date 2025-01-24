@@ -16,7 +16,7 @@
 #     repo: https://github.com/golang/tools
 #     ref: fd02dfae644ce04dfd4bb3828cf576b9d8717f79
 # Must hardcoded a value in job-config.json, mapping to the .remote_source's .name in container.yaml (eg., gopls)
-# ==> https://github.com/redhat-developer/devspaces/blob/devspaces-3-rhel-8/dependencies/job-config.json#L553 (look for gopls)
+# ==> https://github.com/redhat-developer/devspaces/blob/devspaces-3-rhel-9/dependencies/job-config.json#L553 (look for gopls)
 
 set -e
 
@@ -32,7 +32,7 @@ Options:
 
 Example:
 
-  $0 -b devspaces-3-rhel-8 /tmp/container.yaml
+  $0 -b devspaces-3-rhel-9 /tmp/container.yaml
 "
 }
 
@@ -46,7 +46,7 @@ done
 
 if [[ ! $MIDSTM_BRANCH ]] || [[ ! $yamls ]]; then usage; exit 1; fi
 
-if [[ $MIDSTM_BRANCH == "devspaces-3-rhel-8" ]]; then
+if [[ $MIDSTM_BRANCH == "devspaces-3-rhel-9" ]]; then
   JOB_BRANCH=3.x
 else 
   JOB_BRANCH=${MIDSTM_BRANCH%-rhel-*};JOB_BRANCH=${JOB_BRANCH#devspaces-}
@@ -66,7 +66,7 @@ for yaml in $yamls; do
           name=$(cat ${yaml} | yq -r '.remote_sources[]|select(.remote_source.repo=="'$repo'")' | yq -r ".name")
 
           JCJ=/tmp/job-config.json
-          curl -sSLo ${JCJ} https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-8/dependencies/job-config.json
+          curl -sSLo ${JCJ} https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-9/dependencies/job-config.json
           # check if there's an entry (both a key and a version) for this remote source in JCJ
           branchOrTag="$(jq -r --arg name "$name" --arg ver "$JOB_BRANCH" '.Other[$name][$ver]' $JCJ)"
 

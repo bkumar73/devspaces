@@ -12,7 +12,7 @@ name: Plugin Registry - Build
 on:
   push:
     branches: 
-      - devspaces-3-rhel-8
+      - devspaces-3-rhel-9
     paths:
       - 'dependencies/che-plugin-registry/**'
 

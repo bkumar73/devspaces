@@ -8,9 +8,9 @@ Branding is currently in two places.
 
 ### Dashboard
 
-To reskin link:https://github.com/eclipse-che/che-dashboard[Che Dashboard], see link:https://github.com/redhat-developer/devspaces-images/tree/devspaces-3-rhel-8/devspaces-dashboard/README.adoc[dashboard].
+To reskin link:https://github.com/eclipse-che/che-dashboard[Che Dashboard], see link:https://github.com/redhat-developer/devspaces-images/tree/devspaces-3-rhel-9/devspaces-dashboard/README.adoc[dashboard].
 
 ### Microsoft Visual Studio Code - Open Source IDE
 
-To reskin link:https://github.com/che-incubator/che-code/[che-code], which is built from link:https://github.com/microsoft/vscode[Microsoft Visual Studio Code - Open Source IDE], see https://github.com/redhat-developer/devspaces-images/tree/devspaces-3-rhel-8/devspaces-code/branding[devspaces-images/devspaces-code/branding].
+To reskin link:https://github.com/che-incubator/che-code/[che-code], which is built from link:https://github.com/microsoft/vscode[Microsoft Visual Studio Code - Open Source IDE], see https://github.com/redhat-developer/devspaces-images/tree/devspaces-3-rhel-9/devspaces-code/branding[devspaces-images/devspaces-code/branding].
 

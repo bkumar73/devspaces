@@ -18,7 +18,7 @@ DS_VERSION=""
 
 usage ()
 {
-    echo "Usage: $0 -b devspaces-3.y-rhel-8 -v 3.y [-w WORKSPACE_DIR]
+    echo "Usage: $0 -b devspaces-3.y-rhel-9 -v 3.y [-w WORKSPACE_DIR]
 "
     exit
 }

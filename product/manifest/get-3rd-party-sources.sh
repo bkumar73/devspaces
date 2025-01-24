@@ -145,7 +145,7 @@ if [[ ${phases} == *"1"* ]]; then
         # shellcheck disable=SC2013
         for d in $(sort "${WORKSPACE}"/NVRs.txt); do
             NVR=${d}
-            SOURCES_DIR=${d%-container-*}; SOURCES_DIR=${SOURCES_DIR/-rhel8}; # echo $SOURCES_DIR
+            SOURCES_DIR=${d%-container-*}; SOURCES_DIR=${SOURCES_DIR/-rhel9}; # echo $SOURCES_DIR
             echo "git clone --depth 1 --branch ${MIDSTM_BRANCH} to ${SOURCES_DIR} ..."
             git clone --depth 1 --branch "${MIDSTM_BRANCH}" "ssh://${pduser}@pkgs.devel.redhat.com/containers/${SOURCES_DIR}" "${SOURCES_DIR}" || true
             cd "${SOURCES_DIR}" && git checkout "${MIDSTM_BRANCH}" -q && cd ..

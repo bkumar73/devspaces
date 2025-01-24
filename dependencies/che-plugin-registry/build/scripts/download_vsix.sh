@@ -8,7 +8,7 @@ set -o pipefail
 openvsxJson="/openvsx-server/openvsx-sync.json"
 
 usage() {
-    echo "Usage: $0 -b devspaces-3.y-rhel-8 -j /path/to/openvsx-sync.json --no-download
+    echo "Usage: $0 -b devspaces-3.y-rhel-9 -j /path/to/openvsx-sync.json --no-download
 
 All arguments are optional.
 

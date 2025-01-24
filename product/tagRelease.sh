@@ -15,8 +15,8 @@ SCRIPT=$(readlink -f "$0"); SCRIPTPATH=$(dirname "$SCRIPT")
 # defaults
 # try to compute branches from currently checked out branch; else fall back to hard coded value
 TARGET_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
-if [[ $TARGET_BRANCH != "devspaces-3."*"-rhel-8" ]]; then
-	TARGET_BRANCH="devspaces-3-rhel-8"
+if [[ $TARGET_BRANCH != "devspaces-3."*"-rhel-9" ]]; then
+	TARGET_BRANCH="devspaces-3-rhel-9"
 fi
 pkgs_devel_branch=${TARGET_BRANCH}
 
@@ -38,7 +38,7 @@ Example:
 To create or update existing branches and update related PNC build-configs:
   $0 -t DS_VERSION --branchfrom SOURCE_GH_BRANCH -gh TARGET_GH_BRANCH -ghtoken GITHUB_TOKEN
 Example: 
-  $0 -t DS_VERSION --branchfrom devspaces-3-rhel-8 -gh ${TARGET_BRANCH} -ghtoken \$GITHUB_TOKEN
+  $0 -t DS_VERSION --branchfrom devspaces-3-rhel-9 -gh ${TARGET_BRANCH} -ghtoken \$GITHUB_TOKEN
 "
 	exit 1
 fi
@@ -121,7 +121,7 @@ updateSampleDevfileReferences () {
 	if [[ $DS_VERSION ]]; then
 		DS_TAG="$DS_VERSION"
 	else
-		DS_TAG="${TARGET_BRANCH//-rhel-8}"; DS_TAG="${DS_TAG//devspaces-}"
+		DS_TAG="${TARGET_BRANCH//-rhel-9}"; DS_TAG="${DS_TAG//devspaces-}"
 	fi
 	# echo "[DEBUG] update $devfile with DS_TAG = $DS_TAG"
 	sed -r -i $devfile \

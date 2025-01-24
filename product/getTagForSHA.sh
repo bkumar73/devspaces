@@ -54,7 +54,7 @@ checkImage () {
     if [[ $URL ]]; then
         container=${URL}
         container=${image}:${container##*/images/}
-        # replace quay.io/devspaces/devspaces-rhel8-operator:3.4:3.4-22 with quay.io/devspaces/devspaces-rhel8-operator:3.4-22
+        # replace quay.io/devspaces/devspaces-rhel9-operator:3.4:3.4-22 with quay.io/devspaces/devspaces-rhel9-operator:3.4-22
         container=$(echo "$container" | sed -r -e "s@:[0-9.]+:@:@")
         if [[ $QUIET -eq 0 ]]; then echo "Got $container"; else echo "$container"; fi
         checkImage_result="true"

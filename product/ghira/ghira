@@ -129,7 +129,7 @@ class IssueToJIRA:
     return ret
   
   def _map_fixVersions(data):
-    url = 'https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-8/dependencies/job-config.json'
+    url = 'https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-9/dependencies/job-config.json'
     resp = requests.get(url)
     if resp.status_code != 200:
       logging.error("Unable to fetch fix version mapping from " + str(url))
@@ -389,7 +389,7 @@ for i in pending_issues:
       continue
     # if we want to send emails for N&N issues that cannot be synced because they're too old - not found in job-config.json mapping - enable this block
     # else:
-    #   # if can't resolve old milestone in https://github.com/redhat-developer/devspaces/blob/devspaces-3-rhel-8/dependencies/job-config.json, it's too old to process as N&N 
+    #   # if can't resolve old milestone in https://github.com/redhat-developer/devspaces/blob/devspaces-3-rhel-9/dependencies/job-config.json, it's too old to process as N&N 
     #   logging.warning("Skip https://github.com/" + GITHUB_ORG + "/" + GITHUB_REPO + "/issues/%s -- Milestone (%s) is not found in job-config.json (too old?)" % (gh_issue_id, milestone))
     #   for l in i["labels"]:
     #     msg_to = get_area_lead_email(l["name"])

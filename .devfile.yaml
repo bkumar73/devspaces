@@ -40,7 +40,7 @@ commands:
           mkdir output;
           BUILDER=podman SKIP_TEST=true SKIP_FORMAT=true SKIP_LINT=true NODE_BUILD_OPTIONS="-max-old-space-size=1024" ./build.sh &&
           export IMAGE=image-registry.openshift-image-registry.svc:5000/$(kubectl get sa default -o json | jq -r '.metadata.namespace')/che-plugin-registry &&
-          podman tag quay.io/devspaces/pluginregistry-rhel8:next ${IMAGE} &&
+          podman tag quay.io/devspaces/pluginregistry-rhel9:next ${IMAGE} &&
           podman login --tls-verify=false -u $(oc whoami | tr -d :) -p $(oc whoami -t) image-registry.openshift-image-registry.svc:5000 &&
           podman push --tls-verify=false "${IMAGE}"
   - id: configure-custom-plugin-registry

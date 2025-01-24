@@ -14,7 +14,7 @@
 usage () 
 {
     echo "Usage: $0 -b [midstream branch] -t [quay tag] -s [sources to update]"
-    echo "Example: $0 -b devspaces-3.y-rhel-8 -t 3.y -s /path/to/github/redhat-developer/devspaces-images/"
+    echo "Example: $0 -b devspaces-3.y-rhel-9 -t 3.y -s /path/to/github/redhat-developer/devspaces-images/"
 	echo ""
     exit
 }

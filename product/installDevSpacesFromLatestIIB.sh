@@ -105,9 +105,9 @@ Options:
 
   --quay, --fast      : Install from quay.io/devspaces/iib:<DS_VERSION>-v4.yy-<OS_ARCH> (detected OCP version + arch) from fast channel
                       : Resolve images from quay.io using ImageContentSourcePolicy
-  --latest            : Install from quay.io/devspaces/iib:latest-v4.yy-<OS_ARCH>, from fast channel, built from stable devspaces-3.y-rhel-8 branch
+  --latest            : Install from quay.io/devspaces/iib:latest-v4.yy-<OS_ARCH>, from fast channel, built from stable devspaces-3.y-rhel-9 branch
                       : Resolve images from quay.io using ImageContentSourcePolicy
-  --next              : Install from quay.io/devspaces/iib:next-v4.yy-<OS_ARCH>, from fast channel, built from CI devspaces-3-rhel-8 branch
+  --next              : Install from quay.io/devspaces/iib:next-v4.yy-<OS_ARCH>, from fast channel, built from CI devspaces-3-rhel-9 branch
                       : Resolve images from quay.io using ImageContentSourcePolicy
                       : If --next, --disable-default-sources is implied so that we ONLY install DWO from quay, not RH Ecosystem Catalog
 

@@ -5,7 +5,7 @@
 usage() {
     echo "
 Usage: $0 -b SOURCE_BRANCH -v CSV_VERSION
-Example: $0 -b devspaces-3-rhel-8 -v 3.yy
+Example: $0 -b devspaces-3-rhel-9 -v 3.yy
 "
     exit
 }

@@ -31,7 +31,7 @@ Options:
   -p, --push                 : Push IIB(s) to quay registry; default is to show commands but not copy anything
   --force                    : If target image exists, will re-filter and re-push it; otherwise skip to avoid updating image timestamps
   -t PROD_VER                : If x.y version/tag not set, will compute from dependencies/job-config.json file
-  -b MIDSTM_BRANCH           : If not set or run from a git repo will default to devspaces-3-rhel-8
+  -b MIDSTM_BRANCH           : If not set or run from a git repo will default to devspaces-3-rhel-9
   -o 'OCP_VER1 OCP_VER2 ...' : Space-separated list of OCP version(s) (e.g. 'v4.13 v4.12') to query and publish; defaults to job-config.json values
   -e, --extra-tags           : Extra tags to create, such as 3.5.0.RC-02-21-v4.13-x86_64
   -v                         : Verbose output: include additional information
@@ -42,11 +42,11 @@ Options:
 setDefaults () {
     #Moving everything into setDefaults so MIDSTM_BRANCH can be passed in as an argument and the script doesn't need to be run in release branches to promote release builds
     if [[ -z ${MIDSTM_BRANCH} ]]; then
-        MIDSTM_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "devspaces-3-rhel-8")
-        if [[ ${MIDSTM_BRANCH} != "devspaces-"*"-rhel-"* ]]; then MIDSTM_BRANCH="devspaces-3-rhel-8"; fi
+        MIDSTM_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "devspaces-3-rhel-9")
+        if [[ ${MIDSTM_BRANCH} != "devspaces-"*"-rhel-"* ]]; then MIDSTM_BRANCH="devspaces-3-rhel-9"; fi
     fi
 
-    if [[ "${MIDSTM_BRANCH}" =  "devspaces-3-rhel-8" ]]; then
+    if [[ "${MIDSTM_BRANCH}" =  "devspaces-3-rhel-9" ]]; then
         if [[ -f dependencies/job-config.json ]]; then
             jobconfigjson=dependencies/job-config.json
         elif [[ -f ${SCRIPT_DIR}/../dependencies/job-config.json ]]; then
@@ -54,7 +54,7 @@ setDefaults () {
         fi
     else
         pushd /tmp >/dev/null || exit
-        curl -sSLO https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-8/dependencies/job-config.json
+        curl -sSLO https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-9/dependencies/job-config.json
         jobconfigjson=/tmp/job-config.json
         popd >/dev/null || exit 
     fi

@@ -43,11 +43,11 @@ def String getDsVersion(String MIDSTM_BRANCH) {
 // JOB_BRANCH defines which set of jobs to run, eg., dashboard_ + JOB_BRANCH
 def String getJobBranch(String MIDSTM_BRANCH) {
   if (JOB_BRANCH.equals("") || JOB_BRANCH == null) {
-    if (MIDSTM_BRANCH.equals("devspaces-3-rhel-8") || MIDSTM_BRANCH.equals("main")) {
+    if (MIDSTM_BRANCH.equals("devspaces-3-rhel-9") || MIDSTM_BRANCH.equals("main")) {
       JOB_BRANCH="3.x"
     } else {
       // for 3.y (and 2.y)
-      JOB_BRANCH=MIDSTM_BRANCH.replaceAll("devspaces-","").replaceAll("crw-","").replaceAll("-rhel-8","")
+      JOB_BRANCH=MIDSTM_BRANCH.replaceAll("devspaces-","").replaceAll("crw-","").replaceAll("-rhel-9","")
     }
   }
   return JOB_BRANCH
@@ -134,9 +134,9 @@ def updateBaseImages(String REPO_PATH, String SOURCES_BRANCH, String FLAGS="", S
     getDsVersion(SOURCES_BRANCH)
   }
   if (!SCRIPTS_BRANCH?.trim() && DS_BRANCH_F?.trim()) {
-    SCRIPTS_BRANCH = DS_BRANCH_F // this should work for midstream/downstream branches like devspaces-3.1-rhel-8
+    SCRIPTS_BRANCH = DS_BRANCH_F // this should work for midstream/downstream branches like devspaces-3.18-rhel-9
   } else if (!SCRIPTS_BRANCH?.trim() && MIDSTM_BRANCH?.trim()) {
-    SCRIPTS_BRANCH = MIDSTM_BRANCH // this should work for midstream/downstream branches like devspaces-3.1-rhel-8
+    SCRIPTS_BRANCH = MIDSTM_BRANCH // this should work for midstream/downstream branches like devspaces-3.1-rhel-9
   } else if (!SCRIPTS_BRANCH?.trim() && JOB_BRANCH?.trim()) {
     SCRIPTS_BRANCH = JOB_BRANCH // this might fail if the JOB_BRANCH is 2.6 and there's no such branch
   }
@@ -435,7 +435,7 @@ fi
 '''
   return sh(
     returnStdout: true, 
-    // -b devspaces-3.0-rhel-8 -c devspaces/server-rhel8 --tag "3.0-" --quay
+    // -b devspaces-3.18-rhel-9 -c devspaces/server-rhel8 --tag "3.18-" --quay
     script: './getLatestImageTags.sh -b ' + MIDSTM_BRANCH + ' -c "' + orgAndImage + '" --tag "' + tag + '" --' + repo
   ).trim()
 }

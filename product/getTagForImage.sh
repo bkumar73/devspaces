@@ -7,7 +7,7 @@ usage () {
 Usage: 
   $0 [image1] [image2] [image3] ... [-t show container names, sorted]
 Examples: 
-  $0 quay.io/devspaces/devspaces-rhel8-operator:3.0-1 registry.redhat.io/devspaces/server-rhel8:3.0 devspaces-operator-bundle-container-3.0-2
+  $0 quay.io/devspaces/devspaces-rhel9-operator:3.0-1 registry.redhat.io/devspaces/server-rhel9:3.0 devspaces-operator-bundle-container-3.0-2
   $0 \$(cat LATEST_IMAGES) -s
 "
 	exit
@@ -31,11 +31,11 @@ for d in $images; do
     c="";
     c="${d%:*}" # trim off the tag
     c="${c##*/}" # trim repo and org
-    c="${c##*devspaces-3-rhel8-}" # trim devspaces-3-rhel-8 prefix
-    c="${c/-rhel8/}"  # trim container midfix
+    c="${c##*devspaces-3-rhel9-}" # trim devspaces-3-rhel-9 prefix
+    c="${c/-rhel9/}"  # trim container midfix
     c="${c##*devspaces-}"  # trim container prefix
     c="${c%%-container-*}"  # trim container suffix
-    c="${c%%-rhel8}"  # trim container suffix
+    c="${c%%-rhel9}"  # trim container suffix
   else
     (( c = c + 1 ))
   fi

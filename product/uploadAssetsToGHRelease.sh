@@ -29,8 +29,8 @@ DELETE_ASSETS=0 # this also deletes the release in which the assets are stored
 PUBLISH_ASSETS=0 # publish asset(s) to GH
 PULL_ASSETS=0 # pull asset(s) from GH
 PRE_RELEASE="--prerelease" # by default create pre-releases
-MIDSTM_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "devspaces-3-rhel-8")
-if [[ ${MIDSTM_BRANCH} != "devspaces-"*"-rhel-"* ]]; then MIDSTM_BRANCH="devspaces-3-rhel-8"; fi
+MIDSTM_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "devspaces-3-rhel-9")
+if [[ ${MIDSTM_BRANCH} != "devspaces-"*"-rhel-"* ]]; then MIDSTM_BRANCH="devspaces-3-rhel-9"; fi
 
 usageGHT() {
     echo 'Setup:

@@ -51,8 +51,8 @@ fi
 
 # try to compute branches from currently checked out branch; else fall back to hard coded value
 DWNSTM_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
-if [[ $DWNSTM_BRANCH != "devspaces-3."*"-rhel-8" ]] && [[ $DWNSTM_BRANCH != "devspaces-3-rhel-8" ]]; then
-	DWNSTM_BRANCH="devspaces-${VERSION}-rhel-8"
+if [[ $DWNSTM_BRANCH != "devspaces-3."*"-rhel-9" ]] && [[ $DWNSTM_BRANCH != "devspaces-3-rhel-9" ]]; then
+	DWNSTM_BRANCH="devspaces-${VERSION}-rhel-9"
 fi
 
 # STEP 1 :: regenerate image tag list in LATEST_IMAGES

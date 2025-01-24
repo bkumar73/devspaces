@@ -122,6 +122,36 @@
         "disabled": false
       }
     },
+    "machineexec": {
+      "3.17": {
+        "upstream_branch": [
+          "7.92.x",
+          "main"
+        ],
+        "disabled": true
+      },
+      "3.18": {
+        "upstream_branch": [
+          "7.95.x",
+          "main"
+        ],
+        "disabled": false
+      },
+      "3.19": {
+        "upstream_branch": [
+          "7.97.x",
+          "main"
+        ],
+        "disabled": false
+      },
+      "3.x": {
+        "upstream_branch": [
+          "main",
+          "main"
+        ],
+        "disabled": false
+      }
+    },
     "operator": {
       "3.17": {
         "upstream_branch": [
@@ -192,22 +222,22 @@
       },
       "3.18": {
         "upstream_branch": [
-          "devspaces-3.18-rhel-8",
-          "devspaces-3.18-rhel-8"
+          "devspaces-3.18-rhel-9",
+          "devspaces-3.18-rhel-9"
         ],
         "disabled": false
       },
       "3.19": {
         "upstream_branch": [
-          "devspaces-3.19-rhel-8",
-          "devspaces-3.19-rhel-8"
+          "devspaces-3.19-rhel-9",
+          "devspaces-3.19-rhel-9"
         ],
         "disabled": false
       },
       "3.x": {
         "upstream_branch": [
-          "devspaces-3-rhel-8",
-          "devspaces-3-rhel-8"
+          "devspaces-3-rhel-9",
+          "devspaces-3-rhel-9"
         ],
         "disabled": false
       }
@@ -296,22 +326,22 @@
       },
       "3.18": {
         "upstream_branch": [
-          "devspaces-3.18-rhel-8",
-          "devspaces-3.18-rhel-8"
+          "devspaces-3.18-rhel-9",
+          "devspaces-3.18-rhel-9"
         ],
         "disabled": false
       },
       "3.19": {
         "upstream_branch": [
-          "devspaces-3.19-rhel-8",
-          "devspaces-3.19-rhel-8"
+          "devspaces-3.19-rhel-9",
+          "devspaces-3.19-rhel-9"
         ],
         "disabled": false
       },
       "3.x": {
         "upstream_branch": [
-          "devspaces-3-rhel-8",
-          "devspaces-3-rhel-8"
+          "devspaces-3-rhel-9",
+          "devspaces-3-rhel-9"
         ],
         "disabled": false
       }
@@ -532,9 +562,9 @@
     },
     "CHE_OPENVSX_TAG": {
       "3.17": "che-openvsx-v0.15.8",
-      "3.18": "che-openvsx-v0.15.8",
-      "3.19": "che-openvsx-v0.15.8",
-      "3.x": "che-openvsx-v0.15.8"
+      "3.18": "che-openvsx-v0.19.0",
+      "3.19": "che-openvsx-v0.19.0",
+      "3.x": "che-openvsx-v0.19.0"
     },
     "OPENSHIFT_VERSIONS_SUPPORTED": {
       "3.17": [
@@ -549,35 +579,32 @@
         "v4.17",
         "v4.16",
         "v4.15",
-        "v4.14",
-        "v4.12"
+        "v4.14"
       ],
       "3.19": [
         "v4.17",
         "v4.16",
         "v4.15",
-        "v4.14",
-        "v4.12"
+        "v4.14"
       ],
       "3.x": [
         "v4.17",
         "v4.16",
         "v4.15",
-        "v4.14",
-        "v4.12"
+        "v4.14"
       ]
     },
     "OPENSHIFT_CONTENT_SET_VERSION": {
       "3.17": "4.12",
-      "3.18": "4.12",
-      "3.19": "4.12",
-      "3.x": "4.12"
+      "3.18": "4.17",
+      "3.19": "4.17",
+      "3.x": "4.17"
     },
     "OCP_TOOLS_CONTENT_SET_VERSION": {
       "3.17": "4.12",
-      "3.18": "4.12",
-      "3.19": "4.12",
-      "3.x": "4.12"
+      "3.18": "4.15",
+      "3.19": "4.15",
+      "3.x": "4.15"
     },
     "GOLANG_VERSION": {
       "3.17": "1.16.2",

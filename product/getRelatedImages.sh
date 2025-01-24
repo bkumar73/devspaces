@@ -42,7 +42,7 @@ if [[ ! $VERSION ]] || [[ ! $DWO_VERSION ]]; then usage; exit 1; fi
 
 TMPDIR=`mktemp -d`; cd $TMPDIR
 if [[ ! -f /tmp/containerExtract.sh ]]; then
-    curl -sSLO https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-8/product/containerExtract.sh
+    curl -sSLO https://raw.githubusercontent.com/redhat-developer/devspaces/devspaces-3-rhel-9/product/containerExtract.sh
 else
     cp /tmp/containerExtract.sh $TMPDIR/
 fi
